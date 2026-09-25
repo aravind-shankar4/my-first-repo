@@ -1,0 +1,6 @@
+import seaborn as sns
+
+df = sns.load_dataset("titanic")
+df.to_csv("titanic.csv", index=False)  # Committed fallback
+print(df.info(), df.describe(), df.shape)
+missing = (df.isnull().sum() / len(df)) * 100
